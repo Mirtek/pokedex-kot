@@ -153,6 +153,18 @@ body {
   }
 }
 
+@media (min-device-height: 667px) and (min-device-width: 375px) and (-webkit-min-device-pixel-ratio: 3){
+  /* some CSS here */
+    .pokedetails{
+    left:50%;
+    width:45%;
+  }
+  .poce-details-image
+  {
+    height:100%;
+  }
+}
+
 @media only screen and (-webkit-min-device-pixel-ratio: 3), only screen and ( min--moz-device-pixel-ratio: 3), only screen and ( -o-min-device-pixel-ratio: 3/1), only screen and ( min-device-pixel-ratio: 3), only screen and ( min-resolution: 288dpi), only screen and ( min-resolution: 3dppx) {
     /* Retina-specific stuff here */
     .pokedetails{
