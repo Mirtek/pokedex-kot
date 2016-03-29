@@ -1,0 +1,116 @@
+body {
+  font-family: Lato;
+}
+img {height:120px;
+}
+.pad {
+  padding-top: 70px;
+}
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: white;
+}
+
+.bold{
+  font-weight: 900;
+}
+
+.navbar-default{
+  background-color:#fff;
+}
+
+.types {
+  font-weight:400;
+  font-style: italic;
+}
+
+.pokenames
+{
+  padding:10px;
+  font-weight:900;
+  border: 1px solid #5C6BC0;
+  margin:5px;
+  border-radius: 6px;
+  background-color: #3c59a5;
+  color: rgba(255,255,255,0.9);
+}
+
+.pokedetails{
+  margin:7px;
+  padding:10px;
+  position: fixed;
+  top: 69px;
+  left: 75%;
+  border:none;
+  color: rgba(0,0,0,0.86);
+}
+
+.pokedetails-border{border: 1px solid #000;
+border-radius:6px;
+background-color:#ffcc03;
+}
+
+.loadmore-btn{
+  display:none;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+   @media only screen and (min-width : 320px) {
+       .pokedetails{
+    left:50%;
+    width:45%;
+  }     
+    }
+
+    /* Extra Small Devices, Phones */ 
+    @media only screen and (min-width : 480px) {
+    .pokedetails{
+    left:50%;
+    width:45%;
+  }
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (min-width : 768px) {
+    .pokedetails{
+    left:75%;
+    width:20%;
+  }
+  .col-sm-4 {
+  width:30%;
+  }
+    }
+
+    /* Medium Devices, Desktops */
+    @media only screen and (min-width : 992px) {
+.col-sm-4 {
+  width:23%;
+  }
+.col-md-3{
+  width:23%;
+  }
+      
+       .pokedetails{
+    left:75%;
+    width:20%;
+  }
+    }
+
+    /* Large Devices, Wide Screens */
+    @media only screen and (min-width : 1200px) {
+.col-md-3 {
+  width:23%;
+  }
+.pokedetails{
+    left:75%;
+    width:15%;
+  }
+}
