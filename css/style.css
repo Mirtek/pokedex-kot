@@ -22,8 +22,8 @@ body {
 	width: 100%;
 	height: 100%;
 	z-index: 9999;
-  background: url(../img/pokebola.gif) no-repeat fixed center; 
-
+  /*background: url(../img/pokebola.gif) no-repeat fixed center; 
+*/
 }
 
 .bold{
@@ -71,7 +71,7 @@ body {
   margin-bottom: 15px;
 }
 
-@media only screen and (min-width : 320px) {
+@media screen, handheld  and (min-width : 320px) {
  .pokedetails{
   left:50%;
   width:45%; 
@@ -82,7 +82,7 @@ body {
 }
 
 /* Extra Small Devices, Phones */ 
-@media only screen and (min-width : 480px) {
+@media screen, handheld and (min-width : 480px) {
   .pokedetails{
     left:50%;
     width:45%;
@@ -94,7 +94,7 @@ body {
 }
 
 /* Small Devices, Tablets */
-@media only screen and (min-width : 768px) {
+@media screen, handheld and (min-width : 768px) {
   .pokedetails{
     left:65%;
     width:30%;
