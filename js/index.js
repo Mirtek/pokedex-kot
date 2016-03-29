@@ -23,7 +23,7 @@ function processData(data){
      var poceTypes =  getPoceTypes(data.objects[i]);
      
      var link = $('<a href="#'+data.objects[i].name+'"></a>');
-     var img = $('<img src="http://toloshny.com/pokeimg/'+normalizeNumber(data.objects[i].pkdx_id)+'.png">');
+     var img = $('<img src="http://toloshny.com/pokeimg/'+normalizeNumber(data.objects[i].pkdx_id)+'.png" class="pokepic">');
      var poceblock = $('<div class="col-sm-4 col-xs-12 col-md-3 pokenames animated text-center"></div>');
      var poceblocktext =$('<br>'+data.objects[i].name+'<br><span class="types">'+poceTypes+'</span>'); 
      
@@ -33,7 +33,7 @@ function processData(data){
     
 
           return function() {
-            var img = '<img src="http://assets.pokemon.com/assets/cms2/img/pokedex/detail/'+normalizeNumber(poceObject.pkdx_id)+'.png">';
+            var img = '<img src="http://assets.pokemon.com/assets/cms2/img/pokedex/detail/'+normalizeNumber(poceObject.pkdx_id)+'.png" class="">';
             var pokedetails = $('<div class="">'+img+'<br><span class="bold">'+poceObject.name+'</span><br> Type: '+getPoceTypes(poceObject)+
  '<br> Attack: '+poceObject.attack+'<br> Defence: '+poceObject.defense+'<br> Health: '+poceObject.hp+'<br> SP Attack:  '+poceObject.sp_atk+'<br> SP Defense:  '+poceObject.sp_def+'<br> Speed:  '+poceObject.speed+'<br> Weight:  '+poceObject.weight+'<br> Total moves:  '+poceObject.moves.length+'<br></div>');
 $('.pokedetails').hide().html(pokedetails).addClass('pokedetails-border').fadeIn(300);
