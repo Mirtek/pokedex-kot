@@ -10,6 +10,10 @@ body {
 .pokepic {
   height:120px;
 }
+
+.poce-details-image{
+  height:140px;
+}
 .pad {
   padding-top: 75px;
 }
@@ -106,7 +110,7 @@ body {
   }
   .poce-details-image
   {
-    height:140px;
+    height:100%;
   }
 }
 
