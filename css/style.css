@@ -71,7 +71,7 @@ body {
   margin-bottom: 15px;
 }
 
-@media screen, handheld  and (min-width : 320px) {
+@media only screen  and (min-width : 320px) {
  .pokedetails{
   left:50%;
   width:45%; 
@@ -82,7 +82,7 @@ body {
 }
 
 /* Extra Small Devices, Phones */ 
-@media screen, handheld and (min-width : 480px) {
+@media only screen and (min-width : 480px) {
   .pokedetails{
     left:50%;
     width:45%;
@@ -94,7 +94,7 @@ body {
 }
 
 /* Small Devices, Tablets */
-@media screen, handheld and (min-width : 768px) {
+@media only screen and (min-width : 768px) {
   .pokedetails{
     left:65%;
     width:30%;
