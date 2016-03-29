@@ -1,1 +1,1 @@
-# pokedex-kot
+# Pokedex for Kottans JS 
