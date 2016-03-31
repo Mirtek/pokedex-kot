@@ -38,8 +38,9 @@ body {
 }
 
 .types {
-  font-weight:400;
-  font-style: italic;
+  font-weight:300;
+ /* font-style: italic;
+ */ line-height: 2;
 }
 
 .pokenames
@@ -72,8 +73,70 @@ body {
   display:none;
   margin-top: 15px;
   margin-bottom: 15px;
+  background-color: #312f9a;
 }
 
+.type-padding{
+  border-radius: 6px;
+  padding: 2px 10px 3px 10px;
+  margin: 5px;
+  color: rgba(255,255,255,0.86);
+}
+
+.normal-color{
+  background-color: #a8a878;
+}
+.fire-color{
+  background-color: #f08030;
+}
+.water-color{
+  background-color: #6890f0;
+}
+.grass-color{
+  background-color: #78c850;
+}
+.electric-color{
+  background-color: #f8d030;
+}
+.ice-color{
+  background-color: #98d8d8;
+}
+.ground-color{
+  background-color: #e0c068;
+}
+.flying-color{
+  background-color: #a890f0;
+}
+.poison-color{
+  background-color: #a040a0;
+}
+.fighting-color{
+  background-color: #c03028;
+}
+.psychic-color{
+  background-color: #f85888;
+}
+.dark-color{
+  background-color: #705848;
+}
+.rock-color{
+  background-color: #b8a038;
+}
+.bug-color{
+  background-color: #a8b820;
+}
+.ghost-color{
+  background-color: #705898;
+}
+.steel-color{
+  background-color: #b8b8d0;
+}
+.dragon-color{
+  background-color: #7038f8;
+}
+.fairy-color{
+  background-color: #ffaec9;
+}
 
 
 @media only screen  and (min-width : 320px) {
