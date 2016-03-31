@@ -53,6 +53,10 @@ body {
   background-color: #312f9a;
   color: rgba(255,255,255,0.9);
 }
+.pokenames:hover{
+  background-color: #2f4899;
+  
+}
 
 .pokedetails{
   margin:7px;
@@ -75,6 +79,10 @@ body {
   margin-bottom: 15px;
   background-color: #312f9a;
 }
+.loadmore-btn:hover{
+  background-color: #2f4899;
+}
+
 
 .type-padding{
   border-radius: 6px;
