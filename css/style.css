@@ -79,6 +79,7 @@ body {
   margin-top: 15px;
   margin-bottom: 15px;
   background-color: #312f9a;
+  transition: all 0.3s ease 0s;
 }
 .loadmore-btn:hover{
   background-color: #2f4899;
