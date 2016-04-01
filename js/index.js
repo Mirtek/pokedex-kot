@@ -58,66 +58,9 @@ function processData(data){
 function getPoceTypesWithStyling(poceObject){
   var poceTypes = "";
   for (var count=0;count<poceObject.types.length; count++){
-
-   switch (poceObject.types[count].name){
-     case 'normal':
-      poceTypes+="<span class='normal-color type-padding' >"+poceObject.types[count].name+" </span>";
-      break
-     case 'fire':
-      poceTypes+="<span class='fire-color type-padding' >"+poceObject.types[count].name+" </span>";
-      break
-    case 'water':
-      poceTypes+="<span class='water-color type-padding' >"+poceObject.types[count].name+" </span>";
-      break
-    case 'grass':
-      poceTypes+="<span class='grass-color type-padding' >"+poceObject.types[count].name+" </span>";
-      break
-    case 'electric':
-      poceTypes+="<span class='electric-color type-padding' >"+poceObject.types[count].name+" </span>";
-      break
-    case 'ice':
-      poceTypes+="<span class='ice-color type-padding' >"+poceObject.types[count].name+" </span>";
-      break
-    case 'ground':
-      poceTypes+="<span class='ground-color type-padding' >"+poceObject.types[count].name+" </span>";
-      break
-    case 'flying':
-      poceTypes+="<span class='flying-color type-padding' >"+poceObject.types[count].name+" </span>";
-      break
-    case 'poison':
-      poceTypes+="<span class='poison-color type-padding' >"+poceObject.types[count].name+" </span>";
-      break
-    case 'fighting':
-      poceTypes+="<span class='fighting-color type-padding' >"+poceObject.types[count].name+" </span>";
-      break
-    case 'psychic':
-      poceTypes+="<span class='psychic-color type-padding' >"+poceObject.types[count].name+" </span>";
-      break
-    case 'dark':
-      poceTypes+="<span class='dark-color type-padding' >"+poceObject.types[count].name+" </span>";
-      break
-    case 'rock':
-      poceTypes+="<span class='rock-color type-padding' >"+poceObject.types[count].name+" </span>";
-      break
-    case 'bug':
-      poceTypes+="<span class='bug-color type-padding' >"+poceObject.types[count].name+" </span>";
-      break 
-    case 'ghost':
-      poceTypes+="<span class='ghost-color type-padding' >"+poceObject.types[count].name+" </span>";
-      break
-    case 'steel':
-      poceTypes+="<span class='steel-color type-padding' >"+poceObject.types[count].name+" </span>";
-      break
-    case 'dragon':
-      poceTypes+="<span class='dragon-color type-padding' >"+poceObject.types[count].name+" </span>";
-      break
-    case 'fairy':
-      poceTypes+="<span class='fairy-color type-padding' >"+poceObject.types[count].name+" </span>";
-      break
-     default:
-      poceTypes+=poceObject.types[count].name+" "
-   }
-
+    var typeName=poceObject.types[count].name;
+    poceTypes+="<span class='"+typeName+"-color type-padding' >"+typeName+" </span>";
+ 
  }
  
  return poceTypes;

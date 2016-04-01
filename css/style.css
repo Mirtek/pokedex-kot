@@ -52,6 +52,7 @@ body {
   border-radius: 6px;
   background-color: #312f9a;
   color: rgba(255,255,255,0.9);
+  transition: all 0.3s ease 0s;
 }
 .pokenames:hover{
   background-color: #2f4899;
