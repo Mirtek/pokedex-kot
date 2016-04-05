@@ -160,6 +160,9 @@ body {
 .poce-details-image{
   height:140px;
 }
+.headimg{
+  height:50px;  
+}
 }
 
 /* Extra Small Devices, Phones */ 
@@ -172,6 +175,10 @@ body {
   {
     height:140px;
   }
+  .headimg{
+    height:50px;  
+  }
+
 }
 
 /* Small Devices, Tablets */
@@ -187,6 +194,11 @@ body {
   {
     height:100%;
   }
+  .headimg{
+    height:75px;  
+  }
+
+
 }
 
 /* Medium Devices, Desktops */
@@ -199,10 +211,14 @@ body {
     left:65%;
     width:22%;
   }
-    .poce-details-image
+  .poce-details-image
   {
     height:100%;
   }
+  .headimg{
+    height:75px;  
+  }
+
 }
 
 /* Large Devices, Wide Screens */
@@ -214,8 +230,13 @@ body {
     left:65%;
     width:18%;
   }
-    .poce-details-image
+  .poce-details-image
   {
     height:100%;
   }
+  .headimg{
+    height:75px;  
+  }
+
+
 }
