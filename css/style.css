@@ -11,6 +11,9 @@ body {
   height:120px;
 }
 
+.poke-name {
+  line-height: 2;
+}
 .noise-background {
   background-image: url(../img/noisy.png);
   background-repeat: repeat;
@@ -59,17 +62,18 @@ body {
   font-weight: 900;
 }
 
+.main{
+  padding-top: 5px;
+}
 .navbar-default{
   background-color:rgb(255,255,255);
   background-color:rgba(255,255,255,0.9);
-  border-bottom: 1px solid rgba(0,0,0,0.8);
 
 }
 
 .types {
   font-weight:300;
- /* font-style: italic;
- */ line-height: 2;
+  line-height: 4;
 }
 
 .pokenames
@@ -134,8 +138,8 @@ body {
 
 .type-padding{
   border-radius: 6px;
-  padding: 2px 10px 3px 10px;
-  margin: 5px;
+  padding: 3% 8% 5% 8%;
+  margin: 2%;
   color: rgb(255,255,255);
   color: rgba(255,255,255,0.86);
   cursor: pointer;

@@ -50,7 +50,7 @@ function processData(data){
    var link = $('<a href="#'+data.objects[i].name+'"></a>');
    var img = $('<img src="http://toloshny.com/pokeimg/'+getNormalizedNumber(data.objects[i].pkdx_id)+'.png" class="pokepic">');
    var poceblock = $('<div class="col-sm-4 col-xs-12 col-md-3 pokenames text-center"></div>');
-   var poceblocktext = $('<br>'+data.objects[i].name+'<br><span class="types">'+getPoceTypesWithStyling(data.objects[i])+'</span>');
+   var poceblocktext = $('<br><span class="poke-name">'+data.objects[i].name+'</span><br><span class="types">'+getPoceTypesWithStyling(data.objects[i])+'</span>');
    pokeAll.objects.push(data.objects[i]);
    console.log(pokeAll);
    // filter      
