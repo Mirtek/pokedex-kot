@@ -39,6 +39,8 @@ $(document).ready(function(){
     processData(data);
     //turnoff preloader
     $(".se-pre-con").fadeOut(200);
+    $(".loadmore-btn-preloader").hide();
+
   })
 });
 
@@ -261,10 +263,15 @@ function getPoceTypes(poceObject){
 //Load new bunch of poceapi by buttonclikc and process it
 $('.loadmore-btn').click(function(){
   //add preloader
+  $(".loadmore-btn-preloader").show();
+
   $.getJSON('http://pokeapi.co/api/v1/pokemon/?limit=12&offset='+offsetNum, function(data2){
     //console.log(data2)
+
     processData(data2);
     //stop preloader
+  $(".loadmore-btn-preloader").fadeOut(300);
+
   })  
   offsetNum +=12;
 });
