@@ -11,6 +11,17 @@ body {
   height:120px;
 }
 
+.noise-background {
+    background-image: url(../img/noisy.png);
+    background-repeat: repeat;
+    background-repeat-x: repeat;
+    background-repeat-y: repeat;
+    background-position: top left;
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-attachment: fixed;
+}
+
 .poce-details-image{
   height:140px;
 }
@@ -34,7 +45,10 @@ body {
 }
 
 .navbar-default{
-  background-color:#fff;
+  background-color:rgb(255,255,255);
+  background-color:rgba(255,255,255,0.9);
+  border-bottom: 1px solid rgba(0,0,0,0.8);
+
 }
 
 .types {
@@ -87,6 +101,21 @@ body {
   background-color: #2f4899;
 }
 
+.filter-btn{
+  display:none;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  background-color: #312f9a;
+  transition: all 0.3s ease 0s;
+}
+.clear-btn{
+  display:none;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  background-color: #312f9a;
+  transition: all 0.3s ease 0s;
+}
+
 
 .type-padding{
   border-radius: 6px;
@@ -94,6 +123,7 @@ body {
   margin: 5px;
   color: rgb(255,255,255);
   color: rgba(255,255,255,0.86);
+  cursor: pointer;
 }
 
 .normal-color{
@@ -101,9 +131,14 @@ body {
 }
 .fire-color{
   background-color: #f08030;
+  transition: all 0.3s ease 0s;
+}
+.fire-color:hover{
+  opacity: 0.9;
 }
 .water-color{
   background-color: #6890f0;
+  transition: all 0.3s ease 0s;
 }
 .grass-color{
   background-color: #78c850;
@@ -237,6 +272,5 @@ body {
   .headimg{
     height:75px;  
   }
-
 
 }
