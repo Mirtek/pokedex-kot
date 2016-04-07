@@ -12,14 +12,14 @@ body {
 }
 
 .noise-background {
-    background-image: url(../img/noisy.png);
-    background-repeat: repeat;
-    background-repeat-x: repeat;
-    background-repeat-y: repeat;
-    background-position: top left;
-    background-position-x: 0%;
-    background-position-y: 0%;
-    background-attachment: fixed;
+  background-image: url(../img/noisy.png);
+  background-repeat: repeat;
+  background-repeat-x: repeat;
+  background-repeat-y: repeat;
+  background-position: top left;
+  background-position-x: 0%;
+  background-position-y: 0%;
+  background-attachment: fixed;
 }
 
 .poce-details-image{
@@ -198,6 +198,9 @@ body {
 .headimg{
   height:50px;  
 }
+.noise-background {
+  background-image: none; 
+}
 }
 
 /* Extra Small Devices, Phones */ 
@@ -212,6 +215,10 @@ body {
   }
   .headimg{
     height:50px;  
+  }
+
+  .noise-background {
+    background-image: none; 
   }
 
 }
@@ -232,7 +239,9 @@ body {
   .headimg{
     height:75px;  
   }
-
+  .noise-background {
+    background-image: none; 
+  }
 
 }
 
