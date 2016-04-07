@@ -262,6 +262,9 @@ body {
   .headimg{
     height:75px;  
   }
+  .noise-background {
+    background-image: url(../img/noisy.png);
+  }
 
 }
 
@@ -280,6 +283,9 @@ body {
   }
   .headimg{
     height:75px;  
+  }
+  .noise-background {
+    background-image: url(../img/noisy.png);
   }
 
 }
