@@ -152,57 +152,124 @@ body {
   background-color: #f08030;
   transition: all 0.3s ease 0s;
 }
-.fire-color:hover{
-  opacity: 0.9;
-}
 .water-color{
   background-color: #6890f0;
   transition: all 0.3s ease 0s;
 }
 .grass-color{
   background-color: #78c850;
+  transition: all 0.3s ease 0s;
 }
 .electric-color{
   background-color: #f8d030;
+  transition: all 0.3s ease 0s;
 }
 .ice-color{
   background-color: #98d8d8;
+  transition: all 0.3s ease 0s;
 }
 .ground-color{
   background-color: #e0c068;
+  transition: all 0.3s ease 0s;
 }
 .flying-color{
   background-color: #a890f0;
+  transition: all 0.3s ease 0s;
 }
 .poison-color{
   background-color: #a040a0;
+  transition: all 0.3s ease 0s;
 }
 .fighting-color{
   background-color: #c03028;
+  transition: all 0.3s ease 0s;
 }
 .psychic-color{
   background-color: #f85888;
+  transition: all 0.3s ease 0s;
 }
 .dark-color{
   background-color: #705848;
+  transition: all 0.3s ease 0s;
 }
 .rock-color{
   background-color: #b8a038;
+  transition: all 0.3s ease 0s;
 }
 .bug-color{
   background-color: #a8b820;
+  transition: all 0.3s ease 0s;
 }
 .ghost-color{
   background-color: #705898;
+  transition: all 0.3s ease 0s;
 }
 .steel-color{
   background-color: #b8b8d0;
+  transition: all 0.3s ease 0s;
 }
 .dragon-color{
   background-color: #7038f8;
+  transition: all 0.3s ease 0s;
 }
 .fairy-color{
   background-color: #ffaec9;
+  transition: all 0.3s ease 0s;
+}
+
+.normal-color:hover{
+ opacity: 0.8;
+}
+.fire-color:hover{
+ opacity: 0.8;
+}
+.water-color:hover{
+ opacity: 0.8;
+}
+.grass-color:hover{
+ opacity: 0.8;
+}
+.electric-color:hover{
+ opacity: 0.8;
+}
+.ice-color:hover{
+ opacity: 0.8;
+}
+.ground-color:hover{
+ opacity: 0.8;
+}
+.flying-color:hover{
+ opacity: 0.8;
+}
+.poison-color:hover{
+ opacity: 0.8;
+}
+.fighting-color:hover{
+ opacity: 0.8;
+}
+.psychic-color:hover{
+ opacity: 0.8;
+}
+.dark-color:hover{
+ opacity: 0.8;
+}
+.rock-color:hover{
+ opacity: 0.8;
+}
+.bug-color:hover{
+ opacity: 0.8;
+}
+.ghost-color:hover{
+ opacity: 0.8;
+}
+.steel-color:hover{
+ opacity: 0.8;
+}
+.dragon-color:hover{
+ opacity: 0.8;
+}
+.fairy-color:hover{
+ opacity: 0.8;
 }
 
 
