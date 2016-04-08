@@ -64,123 +64,11 @@ function processData(data){
    // Now that's what i call monkey-code. But it's the best solution i've got. 
    // Basicly it's filling filter-objects with data asssosiated with those pokemon types.
    // I know i know, 2x memory (or even more, object itself consumes memory ) just for the filters. 
+   fillFilterObjects(type1, data.objects[i]);
+   fillFilterObjects(type2, data.objects[i]);
 
-   switch (type1){
-    case "normal":
-    pokeNormal.objects.push(data.objects[i]);
-    break;  
-    case "fire":
-    pokeFire.objects.push(data.objects[i]);
-    break;  
-    case "water":
-    pokeWater.objects.push(data.objects[i]);
-    break;
-    case "grass":
-    pokeGrass.objects.push(data.objects[i]);
-    break;
-    case "electric":
-    pokeElectric.objects.push(data.objects[i]);
-    break;
-    case "ice":
-    pokeIce.objects.push(data.objects[i]);
-    break;
-    case "ground":
-    pokeGround.objects.push(data.objects[i]);
-    break;
-    case "flying":
-    pokeFlying.objects.push(data.objects[i]);
-    break;
-    case "poison":
-    pokePoison.objects.push(data.objects[i]);
-    break;
-    case "fighting":
-    pokeFighting.objects.push(data.objects[i]);
-    break;
-    case "psychic":
-    pokePsychic.objects.push(data.objects[i]);
-    break;
-    case "dark":
-    pokeDark.objects.push(data.objects[i]);
-    break;
-    case "rock":
-    pokeRock.objects.push(data.objects[i]);
-    break;
-    case "bug":
-    pokeBug.objects.push(data.objects[i]);
-    break;
-    case "ghost":
-    pokeGhost.objects.push(data.objects[i]);
-    break;
-    case "steel":
-    pokeSteel.objects.push(data.objects[i]);
-    break;
-    case "dragon":
-    pokeDragon.objects.push(data.objects[i]);
-    break;
-    case "fairy":
-    pokeFairy.objects.push(data.objects[i]);
-    break; 
-  }
-
-  switch (type2){
-    case "normal":
-    pokeNormal.objects.push(data.objects[i]);
-    break;  
-    case "fire":
-    pokeFire.objects.push(data.objects[i]);
-    break;  
-    case "water":
-    pokeWater.objects.push(data.objects[i]);
-    break;
-    case "grass":
-    pokeGrass.objects.push(data.objects[i]);
-    break;
-    case "electric":
-    pokeElectric.objects.push(data.objects[i]);
-    break;
-    case "ice":
-    pokeIce.objects.push(data.objects[i]);
-    break;
-    case "ground":
-    pokeGround.objects.push(data.objects[i]);
-    break;
-    case "flying":
-    pokeFlying.objects.push(data.objects[i]);
-    break;
-    case "poison":
-    pokePoison.objects.push(data.objects[i]);
-    break;
-    case "fighting":
-    pokeFighting.objects.push(data.objects[i]);
-    break;
-    case "psychic":
-    pokePsychic.objects.push(data.objects[i]);
-    break;
-    case "dark":
-    pokeDark.objects.push(data.objects[i]);
-    break;
-    case "rock":
-    pokeRock.objects.push(data.objects[i]);
-    break;
-    case "bug":
-    pokeBug.objects.push(data.objects[i]);
-    break;
-    case "ghost":
-    pokeGhost.objects.push(data.objects[i]);
-    break;
-    case "steel":
-    pokeSteel.objects.push(data.objects[i]);
-    break;
-    case "dragon":
-    pokeDragon.objects.push(data.objects[i]);
-    break;
-    case "fairy":
-    pokeFairy.objects.push(data.objects[i]);
-    break; 
-  }
-
-  link.append(img); 
-  link.click((function(e){
+   link.append(img); 
+   link.click((function(e){
     var poceObject = data.objects[i];
   //  console.log(pokeFire);
   return function() {
@@ -193,12 +81,72 @@ function processData(data){
   }
 })());
 
-  poceblock.append(link);
-  poceblock.append(poceblocktext);
-  poceElement.append(poceblock.hide().fadeIn(100));
+   poceblock.append(link);
+   poceblock.append(poceblocktext);
+   poceElement.append(poceblock.hide().fadeIn(100));
 
-  $('.loadmore-btn').fadeIn(400);
+   $('.loadmore-btn').fadeIn(400);
+ }
+}
 
+// Weird switch for 18 cases for filling filter-objects
+function fillFilterObjects(type,pokemonObject){
+
+ switch (type){
+  case "normal":
+  pokeNormal.objects.push(pokemonObject);
+  break;  
+  case "fire":
+  pokeFire.objects.push(pokemonObject);
+  break;  
+  case "water":
+  pokeWater.objects.push(pokemonObject);
+  break;
+  case "grass":
+  pokeGrass.objects.push(pokemonObject);
+  break;
+  case "electric":
+  pokeElectric.objects.push(pokemonObject);
+  break;
+  case "ice":
+  pokeIce.objects.push(pokemonObject);
+  break;
+  case "ground":
+  pokeGround.objects.push(pokemonObject);
+  break;
+  case "flying":
+  pokeFlying.objects.push(pokemonObject);
+  break;
+  case "poison":
+  pokePoison.objects.push(pokemonObject);
+  break;
+  case "fighting":
+  pokeFighting.objects.push(pokemonObject);
+  break;
+  case "psychic":
+  pokePsychic.objects.push(pokemonObject);
+  break;
+  case "dark":
+  pokeDark.objects.push(pokemonObject);
+  break;
+  case "rock":
+  pokeRock.objects.push(pokemonObject);
+  break;
+  case "bug":
+  pokeBug.objects.push(pokemonObject);
+  break;
+  case "ghost":
+  pokeGhost.objects.push(pokemonObject);
+  break;
+  case "steel":
+  pokeSteel.objects.push(pokemonObject);
+  break;
+  case "dragon":
+  pokeDragon.objects.push(pokemonObject);
+  break;
+  case "fairy":
+  pokeFairy.objects.push(pokemonObject);
+  break; 
 }
 
 }
@@ -218,10 +166,9 @@ function processDataNoJSON(data){
     var poceObject = data.objects[i];
     return function() {
       var img = '<img src="http://toloshny.com/pokeimg/'+getNormalizedNumber(poceObject.pkdx_id)+'.png" class="poce-details-image">';
-      var pokedetails = $('<div class="">'+img+'<br><span class="bold">'+poceObject.name+'</span><br> Type: '+getPoceTypes(poceObject)+
+      var pokedetails = $('<div class="">'+img+'<br><span class="bold">'+poceObject.name+' #'+getNormalizedNumber(poceObject.pkdx_id)+'</span><br> Type: '+getPoceTypes(poceObject)+
        '<br> Attack: '+poceObject.attack+'<br> Defence: '+poceObject.defense+'<br> Health: '+poceObject.hp+'<br> SP Attack:  '+poceObject.sp_atk+'<br> SP Defense:  '+poceObject.sp_def+'<br> Speed:  '+poceObject.speed+'<br> Weight:  '+poceObject.weight+'<br> Total moves:  '+poceObject.moves.length+'<br></div>');
       $('.pokedetails').hide().html(pokedetails).addClass('pokedetails-border').fadeIn(300);
-
       return false;
     }
   })());
