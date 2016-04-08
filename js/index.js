@@ -4,9 +4,10 @@ var poceElement = $('.pokemons');
 var clearBtn = $('.clear-btn');
 var loadmoreBtn = $('.loadmore-btn');
 
+//Objects for filtering data
+var pokeNormal = {objects: []};
 var pokeFire = {objects: []};
 var pokeWater = {objects: []};
-var pokeNormal = {objects: []};
 var pokeGrass = {objects: []};
 var pokeElectric = {objects: []};
 var pokeIce = {objects: []};
@@ -44,7 +45,7 @@ $(document).ready(function(){
   })
 });
 
-// Show blocks of 12 pokemons, with onclick to show details about each
+// Show blocks of 12 pokemons, with onclick to show details about each also does data filling for filters
 function processData(data){
   for (var i=0; i<data.objects.length; i++){
    var link = $('<a href="#'+data.objects[i].name+'"></a>');
@@ -52,8 +53,7 @@ function processData(data){
    var poceblock = $('<div class="col-sm-4 col-xs-12 col-md-3 pokenames text-center"></div>');
    var poceblocktext = $('<br><span class="poke-name">'+data.objects[i].name+'</span><br><span class="types">'+getPoceTypesWithStyling(data.objects[i])+'</span>');
    pokeAll.objects.push(data.objects[i]);
-   console.log(pokeAll);
-   // filter      
+   //console.log(pokeAll);
    var type1 = data.objects[i].types[0].name;
    var type2="";
    if (typeof data.objects[i].types[1] !== 'undefined') {
@@ -61,7 +61,7 @@ function processData(data){
     var type2 = data.objects[i].types[1].name;
   }
 
-   // Now that's what i call monkey-code. But it's the best solution i've got so whatever. 
+   // Now that's what i call monkey-code. But it's the best solution i've got. 
    // Basicly it's filling filter-objects with data asssosiated with those pokemon types.
    // I know i know, 2x memory (or even more, object itself consumes memory ) just for the filters. 
 
@@ -185,7 +185,7 @@ function processData(data){
   //  console.log(pokeFire);
   return function() {
     var img = '<img src="http://toloshny.com/pokeimg/'+getNormalizedNumber(poceObject.pkdx_id)+'.png" class="poce-details-image">';
-    var pokedetails = $('<div class="">'+img+'<br><span class="bold">'+poceObject.name+'</span><br> Type: '+getPoceTypes(poceObject)+
+    var pokedetails = $('<div class="">'+img+'<br><span class="bold">'+poceObject.name+' #'+getNormalizedNumber(poceObject.pkdx_id)+'</span><br> Type: '+getPoceTypes(poceObject)+
      '<br> Attack: '+poceObject.attack+'<br> Defence: '+poceObject.defense+'<br> Health: '+poceObject.hp+'<br> SP Attack:  '+poceObject.sp_atk+'<br> SP Defense:  '+poceObject.sp_def+'<br> Speed:  '+poceObject.speed+'<br> Weight:  '+poceObject.weight+'<br> Total moves:  '+poceObject.moves.length+'<br></div>');
     $('.pokedetails').hide().html(pokedetails).addClass('pokedetails-border').fadeIn(300);
 
@@ -195,15 +195,15 @@ function processData(data){
 
   poceblock.append(link);
   poceblock.append(poceblocktext);
-//  poceElement.append(poceblock.hide.);
-poceElement.append(poceblock.fadeOut(200).hide().fadeIn(100));
+  poceElement.append(poceblock.hide().fadeIn(100));
 
-$('.loadmore-btn').fadeIn(400).show();
-
-}
+  $('.loadmore-btn').fadeIn(400);
 
 }
 
+}
+
+//Shows blocks of pokemons, works with stored data
 function processDataNoJSON(data){
  poceElement.empty();
 
@@ -213,36 +213,26 @@ function processDataNoJSON(data){
    var poceblock = $('<div class="col-sm-4 col-xs-12 col-md-3 pokenames text-center"></div>');
    var poceblocktext = $('<br>'+data.objects[i].name+'<br><span class="types">'+getPoceTypesWithStyling(data.objects[i])+'</span>');
    
-   //fire filter
-    // if (data.objects[i].types[0].name.indexOf("fire")!=-1){   
-    //   data.objects.push(data.objects[i]);
-    // }
+   link.append(img); 
+   link.click((function(e){
+    var poceObject = data.objects[i];
+    return function() {
+      var img = '<img src="http://toloshny.com/pokeimg/'+getNormalizedNumber(poceObject.pkdx_id)+'.png" class="poce-details-image">';
+      var pokedetails = $('<div class="">'+img+'<br><span class="bold">'+poceObject.name+'</span><br> Type: '+getPoceTypes(poceObject)+
+       '<br> Attack: '+poceObject.attack+'<br> Defence: '+poceObject.defense+'<br> Health: '+poceObject.hp+'<br> SP Attack:  '+poceObject.sp_atk+'<br> SP Defense:  '+poceObject.sp_def+'<br> Speed:  '+poceObject.speed+'<br> Weight:  '+poceObject.weight+'<br> Total moves:  '+poceObject.moves.length+'<br></div>');
+      $('.pokedetails').hide().html(pokedetails).addClass('pokedetails-border').fadeIn(300);
 
-    link.append(img); 
-    link.click((function(e){
-      var poceObject = data.objects[i];
-  //  console.log(data);
-  return function() {
-    var img = '<img src="http://toloshny.com/pokeimg/'+getNormalizedNumber(poceObject.pkdx_id)+'.png" class="poce-details-image">';
-    var pokedetails = $('<div class="">'+img+'<br><span class="bold">'+poceObject.name+'</span><br> Type: '+getPoceTypes(poceObject)+
-     '<br> Attack: '+poceObject.attack+'<br> Defence: '+poceObject.defense+'<br> Health: '+poceObject.hp+'<br> SP Attack:  '+poceObject.sp_atk+'<br> SP Defense:  '+poceObject.sp_def+'<br> Speed:  '+poceObject.speed+'<br> Weight:  '+poceObject.weight+'<br> Total moves:  '+poceObject.moves.length+'<br></div>');
-    $('.pokedetails').hide().html(pokedetails).addClass('pokedetails-border').fadeIn(300);
-
-    return false;
-  }
-})());
-    poceblock.append(link);
-    poceblock.append(poceblocktext);
-    //poceElement.append(poceblock);
-
-//   poceElement.append(poceblock.hide().fadeIn(100));
-poceElement.append(poceblock.fadeOut(200).hide().fadeIn(100));
-
-}
+      return false;
+    }
+  })());
+   poceblock.append(link);
+   poceblock.append(poceblocktext);
+   poceElement.append(poceblock.hide().fadeIn(100));
+ }
 }
 
 
-//Find types of current poceObject (fire,normal,etc)
+//Find types of current poceObject (fire,normal,etc) and add styling to it (for block with image)
 function getPoceTypesWithStyling(poceObject){
   var poceTypes = "";
   for (var count=0;count<poceObject.types.length; count++){
@@ -260,17 +250,16 @@ function getPoceTypes(poceObject){
   return poceTypes;
 }
 
-//Load new bunch of poceapi by buttonclikc and process it
+//Load new bunch of poceapi by buttonclick and process it
 $('.loadmore-btn').click(function(){
-  //add preloader
+  //add preloader for Show more pokemons button
   $(".loadmore-btn-preloader").show();
 
   $.getJSON('http://pokeapi.co/api/v1/pokemon/?limit=12&offset='+offsetNum, function(data2){
     //console.log(data2)
-
     processData(data2);
     //stop preloader
-  $(".loadmore-btn-preloader").fadeOut(300);
+    $(".loadmore-btn-preloader").fadeOut(300);
 
   })  
   offsetNum +=12;
@@ -287,92 +276,92 @@ $('.clear-btn').click(function(){
 $('body').on('click', '.normal-filter', function(){
  loadmoreBtn.hide();
  processDataNoJSON(pokeNormal);
- clearBtn.fadeIn(400).show();
+ clearBtn.fadeIn(400);
 });
 $('body').on('click', '.fire-filter', function(){
  loadmoreBtn.hide();
  processDataNoJSON(pokeFire);
- clearBtn.fadeIn(400).show();
+ clearBtn.fadeIn(400);
 });
 $('body').on('click', '.water-filter', function(){
  loadmoreBtn.hide();
  processDataNoJSON(pokeWater);
- clearBtn.fadeIn(400).show();
+ clearBtn.fadeIn(400);
 });
 $('body').on('click', '.grass-filter', function(){
  loadmoreBtn.hide();
  processDataNoJSON(pokeGrass);
- clearBtn.fadeIn(400).show();
+ clearBtn.fadeIn(400);
 });
 $('body').on('click', '.electric-filter', function(){
  loadmoreBtn.hide();
  processDataNoJSON(pokeElectric);
- clearBtn.fadeIn(400).show();
+ clearBtn.fadeIn(400);
 });
 $('body').on('click', '.ice-filter', function(){
  loadmoreBtn.hide();
  processDataNoJSON(pokeIce);
- clearBtn.fadeIn(400).show();
+ clearBtn.fadeIn(400);
 });
 $('body').on('click', '.ground-filter', function(){
  loadmoreBtn.hide();
  processDataNoJSON(pokeGround);
- clearBtn.fadeIn(400).show();
+ clearBtn.fadeIn(400);
 });
 $('body').on('click', '.flying-filter', function(){
  loadmoreBtn.hide();
  processDataNoJSON(pokeFlying);
- clearBtn.fadeIn(400).show();
+ clearBtn.fadeIn(400);
 });
 $('body').on('click', '.poison-filter', function(){
  loadmoreBtn.hide();
  processDataNoJSON(pokePoison);
- clearBtn.fadeIn(400).show();
+ clearBtn.fadeIn(400);
 });
 $('body').on('click', '.fighting-filter', function(){
  loadmoreBtn.hide();
  processDataNoJSON(pokeFighting);
- clearBtn.fadeIn(400).show();
+ clearBtn.fadeIn(400);
 });
 $('body').on('click', '.psychic-filter', function(){
  loadmoreBtn.hide();
  processDataNoJSON(pokePsychic);
- clearBtn.fadeIn(400).show();
+ clearBtn.fadeIn(400);
 });
 $('body').on('click', '.dark-filter', function(){
  loadmoreBtn.hide();
  processDataNoJSON(pokeDark);
- clearBtn.fadeIn(400).show();
+ clearBtn.fadeIn(400);
 });
 $('body').on('click', '.rock-filter', function(){
  loadmoreBtn.hide();
  processDataNoJSON(pokeRock);
- clearBtn.fadeIn(400).show();
+ clearBtn.fadeIn(400);
 });
 $('body').on('click', '.bug-filter', function(){
  loadmoreBtn.hide();
  processDataNoJSON(pokeBug);
- clearBtn.fadeIn(400).show();
+ clearBtn.fadeIn(400);
 });
 $('body').on('click', '.ghost-filter', function(){
  loadmoreBtn.hide();
  processDataNoJSON(pokeGhost);
- clearBtn.fadeIn(400).show();
+ clearBtn.fadeIn(400);
 });
 $('body').on('click', '.steel-filter', function(){
  loadmoreBtn.hide();
  processDataNoJSON(pokeSteel);
- clearBtn.fadeIn(400).show();
+ clearBtn.fadeIn(400);
 });
 $('body').on('click', '.dragon-filter', function(){
  loadmoreBtn.hide();
  processDataNoJSON(pokeDragon);
- clearBtn.fadeIn(400).show();
+ clearBtn.fadeIn(400);
 });
 $('body').on('click', '.fairy-filter', function(){
  loadmoreBtn.hide();
  processDataNoJSON(pokeFairy);
- clearBtn.fadeIn(400).show();
+ clearBtn.fadeIn(400);
 });
 
 // Normalize ID pockemon number to make it 3 digits starting with zeroes like 000.png
