@@ -368,5 +368,8 @@ body {
   .noise-background {
     background-image: url(../img/noisy.png);
   }
+  .poceimg{
+    height: 100%;
+  }
 
 }
