@@ -120,13 +120,6 @@ body {
   background-color: #2f4899;
 }
 
-.filter-btn{
-  display:none;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  background-color: #312f9a;
-  transition: all 0.3s ease 0s;
-}
 .clear-btn{
   display:none;
   margin-top: 15px;
@@ -134,7 +127,9 @@ body {
   background-color: #312f9a;
   transition: all 0.3s ease 0s;
 }
-
+.clear-btn:hover{
+  background-color: #2f4899;
+}
 
 .type-padding{
   border-radius: 6px;
