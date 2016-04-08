@@ -369,7 +369,30 @@ body {
     background-image: url(../img/noisy.png);
   }
   .pokepic{
-    height: 100%;
+    height: 83%;
   }
 
+}
+
+@media only screen and (min-width : 1600px) {
+  .col-md-3 {
+    width:23%;
+  }
+  .pokedetails{
+    left:65%;
+    width:13%;
+  }
+  .poce-details-image
+  {
+    height:100%;
+  }
+  .headimg{
+    height:75px;  
+  }
+  .noise-background {
+    background-image: url(../img/noisy.png);
+  }
+  .pokepic{
+    height: 100%;
+  }
 }
