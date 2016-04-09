@@ -1,10 +1,11 @@
 // Default offset
 var offsetNum = 12;
+// Some variables which i will use later, save them to not call $ function everytime i need them
 var poceElement = $('.pokemons');
 var clearBtn = $('.clear-btn');
 var loadmoreBtn = $('.loadmore-btn');
 
-//Objects for filtering data
+// Objects for filtering data
 var pokeNormal = {objects: []};
 var pokeFire = {objects: []};
 var pokeWater = {objects: []};
@@ -36,7 +37,7 @@ $('#se-pre-con').bind('ajaxStart', function(){
 //load first batch from api
 $(document).ready(function(){
   $.getJSON('http://pokeapi.co/api/v1/pokemon/?limit=12', function(data){
-    console.log(data);
+    //console.log(data);
     processData(data);
     //turnoff preloader
     $(".se-pre-con").fadeOut(200);
@@ -63,23 +64,23 @@ function processData(data){
 
    // Now that's what i call monkey-code. But it's the best solution i've got. 
    // Basicly it's filling filter-objects with data asssosiated with those pokemon types.
-   // I know i know, 2x memory (or even more, object itself consumes memory ) just for the filters. 
+   // I know i know, 2x memory (or even more, object itself consumes memory) just for the filters. 
    fillFilterObjects(type1, data.objects[i]);
    fillFilterObjects(type2, data.objects[i]);
 
    link.append(img); 
    link.click((function(e){
     var poceObject = data.objects[i];
-  //  console.log(pokeFire);
-  return function() {
-    var img = '<img src="http://toloshny.com/pokeimg/'+getNormalizedNumber(poceObject.pkdx_id)+'.png" class="poce-details-image">';
-    var pokedetails = $('<div class="">'+img+'<br><span class="bold">'+poceObject.name+' #'+getNormalizedNumber(poceObject.pkdx_id)+'</span><br> Type: '+getPoceTypes(poceObject)+
-     '<br> Attack: '+poceObject.attack+'<br> Defence: '+poceObject.defense+'<br> Health: '+poceObject.hp+'<br> SP Attack:  '+poceObject.sp_atk+'<br> SP Defense:  '+poceObject.sp_def+'<br> Speed:  '+poceObject.speed+'<br> Weight:  '+poceObject.weight+'<br> Total moves:  '+poceObject.moves.length+'<br></div>');
-    $('.pokedetails').hide().html(pokedetails).addClass('pokedetails-border').fadeIn(300);
+    //  console.log(pokeFire);
+    return function() {
+      var img = '<img src="http://toloshny.com/pokeimg/'+getNormalizedNumber(poceObject.pkdx_id)+'.png" class="poce-details-image">';
+      var pokedetails = $('<div class="">'+img+'<br><span class="bold">'+poceObject.name+' #'+getNormalizedNumber(poceObject.pkdx_id)+'</span><br> Type: '+getPoceTypes(poceObject)+
+       '<br> Attack: '+poceObject.attack+'<br> Defence: '+poceObject.defense+'<br> Health: '+poceObject.hp+'<br> SP Attack:  '+poceObject.sp_atk+'<br> SP Defense:  '+poceObject.sp_def+'<br> Speed:  '+poceObject.speed+'<br> Weight:  '+poceObject.weight+'<br> Total moves:  '+poceObject.moves.length+'<br></div>');
+      $('.pokedetails').hide().html(pokedetails).addClass('pokedetails-border').fadeIn(300);
 
-    return false;
-  }
-})());
+      return false;
+    }
+  })());
 
    poceblock.append(link);
    poceblock.append(poceblocktext);
@@ -189,6 +190,7 @@ function getPoceTypesWithStyling(poceObject){
   return poceTypes;
 }
 
+//Same but for the detalis block - no styling
 function getPoceTypes(poceObject){
   var poceTypes = "";
   for (var count=0;count<poceObject.types.length; count++){
@@ -212,7 +214,7 @@ $('.loadmore-btn').click(function(){
   offsetNum +=12;
 });
 
-
+//Logic of clerafilters button - clear filters, show all loaded pokemons
 $('.clear-btn').click(function(){
   // console.log(pokeAll);
   clearBtn.hide();
@@ -220,6 +222,7 @@ $('.clear-btn').click(function(){
   loadmoreBtn.fadeIn(300).show();
 });
 
+//Logic of filter buttons (the type button) for every poketype
 $('body').on('click', '.normal-filter', function(){
  loadmoreBtn.hide();
  processDataNoJSON(pokeNormal);
@@ -311,7 +314,7 @@ $('body').on('click', '.fairy-filter', function(){
  clearBtn.fadeIn(400);
 });
 
-// Normalize ID pockemon number to make it 3 digits starting with zeroes like 000.png
+// Normalize ID pockemon number to make it 3 digits starting with zeroes - like "000.png"
 function getNormalizedNumber(num){
   var res;
   if (num < 10) {

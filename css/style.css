@@ -14,6 +14,10 @@ body {
 .poke-name {
   line-height: 2;
 }
+
+.align-right{
+  float:right;
+}
 .noise-background {
   background-image: url(../img/noisy.png);
   background-repeat: repeat;
