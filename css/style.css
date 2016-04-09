@@ -18,6 +18,9 @@ body {
 .align-right{
   float:right;
 }
+.align-left{
+  float:left;
+}
 .noise-background {
   background-image: url(../img/noisy.png);
   background-repeat: repeat;

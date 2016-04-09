@@ -74,10 +74,9 @@ function processData(data){
     //  console.log(pokeFire);
     return function() {
       var img = '<img src="http://toloshny.com/pokeimg/'+getNormalizedNumber(poceObject.pkdx_id)+'.png" class="poce-details-image">';
-      var pokedetails = $('<div class="">'+img+'<br><span class="bold">'+poceObject.name+' #'+getNormalizedNumber(poceObject.pkdx_id)+'</span><br> Type: '+getPoceTypes(poceObject)+
-       '<br> Attack: '+poceObject.attack+'<br> Defence: '+poceObject.defense+'<br> Health: '+poceObject.hp+'<br> SP Attack:  '+poceObject.sp_atk+'<br> SP Defense:  '+poceObject.sp_def+'<br> Speed:  '+poceObject.speed+'<br> Weight:  '+poceObject.weight+'<br> Total moves:  '+poceObject.moves.length+'<br></div>');
+      var pokedetails = $('<div class="">'+img+'<br><span class="bold align-left">'+poceObject.name+' </span><span class="bold align-right">#'+getNormalizedNumber(poceObject.pkdx_id)+'</span><div class="clearifx"><br><span class="align-left">Type:</span><span class="align-right">'+getPoceTypes(poceObject)+
+       '</span><br><span class="align-left">Attack: </span><span class="align-right">'+poceObject.attack+'</span><div class="clearifx"><br><span class="align-left">Defence:</span><span class="align-right">'+poceObject.defense+'</span><div class="clearifx"><br><span class="align-left">Health: </span><span class="align-right">'+poceObject.hp+'</span><br><div class="clearfix"></div><span class="align-left">SP Attack:</span><span class="align-right">'+poceObject.sp_atk+'</span><br><div class="clearfix"></div><span class="align-left">SP Defense:</span>  <span class="align-right">'+poceObject.sp_def+'</span><br><div class="clearifx"></div><span class="align-left">Speed:  </span><span class="align-right">'+poceObject.speed+'</span><br><div class="clearfix"></div><span class="align-left">Weight:</span> <span class="align-right">'+poceObject.weight+'</span><br><div class="clearfix"></div><span class="align-left">Total moves:</span>  <span class="align-right">'+poceObject.moves.length+'</span><br><div class="clearfix"></div></div>');
       $('.pokedetails').hide().html(pokedetails).addClass('pokedetails-border').fadeIn(300);
-
       return false;
     }
   })());
@@ -167,8 +166,8 @@ function processDataNoJSON(data){
     var poceObject = data.objects[i];
     return function() {
       var img = '<img src="http://toloshny.com/pokeimg/'+getNormalizedNumber(poceObject.pkdx_id)+'.png" class="poce-details-image">';
-      var pokedetails = $('<div class="">'+img+'<br><span class="bold">'+poceObject.name+' #'+getNormalizedNumber(poceObject.pkdx_id)+'</span><br> Type: '+getPoceTypes(poceObject)+
-       '<br> Attack: '+poceObject.attack+'<br> Defence: '+poceObject.defense+'<br> Health: '+poceObject.hp+'<br> SP Attack:  '+poceObject.sp_atk+'<br> SP Defense:  '+poceObject.sp_def+'<br> Speed:  '+poceObject.speed+'<br> Weight:  '+poceObject.weight+'<br> Total moves:  '+poceObject.moves.length+'<br></div>');
+      var pokedetails = $('<div class="">'+img+'<br><span class="bold align-left">'+poceObject.name+' </span><span class="bold align-right">#'+getNormalizedNumber(poceObject.pkdx_id)+'</span><div class="clearifx"><br><span class="align-left">Type:</span><span class="align-right">'+getPoceTypes(poceObject)+
+       '</span><br><span class="align-left">Attack: </span><span class="align-right">'+poceObject.attack+'</span><div class="clearifx"><br><span class="align-left">Defence:</span><span class="align-right">'+poceObject.defense+'</span><div class="clearifx"><br><span class="align-left">Health: </span><span class="align-right">'+poceObject.hp+'</span><br><div class="clearfix"></div><span class="align-left">SP Attack:</span><span class="align-right">'+poceObject.sp_atk+'</span><br><div class="clearfix"></div><span class="align-left">SP Defense:</span>  <span class="align-right">'+poceObject.sp_def+'</span><br><div class="clearifx"></div><span class="align-left">Speed:  </span><span class="align-right">'+poceObject.speed+'</span><br><div class="clearfix"></div><span class="align-left">Weight:</span> <span class="align-right">'+poceObject.weight+'</span><br><div class="clearfix"></div><span class="align-left">Total moves:</span>  <span class="align-right">'+poceObject.moves.length+'</span><br><div class="clearfix"></div></div>');
       $('.pokedetails').hide().html(pokedetails).addClass('pokedetails-border').fadeIn(300);
       return false;
     }
